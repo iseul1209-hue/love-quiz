@@ -141,8 +141,9 @@
     vertical-align: middle;
   }
   .btn-start {
-    background: linear-gradient(135deg, #E8B86D 0%, #D4913A 100%);
-    color: #1A0F00;
+    background: linear-gradient(135deg, #C8922A 0%, #A06E18 100%);
+    color: var(--text);
+    backdrop-filter: blur(12px);
     border: none;
     border-radius: 50px;
     padding: 17px 48px;
@@ -150,7 +151,7 @@
     font-weight: 700;
     font-family: 'Noto Sans KR', sans-serif;
     cursor: pointer;
-    box-shadow: 0 8px 32px rgba(232,184,109,0.35);
+    box-shadow: 0 8px 32px rgba(181,130,42,0.28);
     transition: all 0.25s;
     letter-spacing: 0.5px;
   }
@@ -328,11 +329,12 @@
     letter-spacing: 0.5px;
   }
   .btn-next.ready {
-    background: linear-gradient(135deg, #E8B86D 0%, #D4913A 100%);
+    background: linear-gradient(135deg, #C8922A 0%, #A06E18 100%);
     border-color: transparent;
-    color: #1A0F00;
+    color: var(--text);
+    backdrop-filter: blur(12px);
     font-weight: 700;
-    box-shadow: 0 4px 20px rgba(232,184,109,0.3);
+    box-shadow: 0 4px 20px rgba(181,130,42,0.25);
   }
   .btn-next:active { transform: scale(0.97); }
 
@@ -632,101 +634,101 @@ const questions = [
   {
     q: "배우자가 나를 사랑한다고 <em>가장 크게 느낄 때</em>는?",
     choices: [
+      { t: '꼭 안아줄 때', l: 5 },
       { t: '"정말 수고했어"라고 말해줄 때', l: 1 },
-      { t: '폰을 내려놓고 나만 바라볼 때', l: 2 },
-      { t: '작은 선물을 깜짝 줄 때', l: 3 },
       { t: '집안일을 먼저 해줄 때', l: 4 },
-      { t: '꼭 안아줄 때', l: 5 }
+      { t: '작은 선물을 깜짝 줄 때', l: 3 },
+      { t: '폰을 내려놓고 나만 바라볼 때', l: 2 }
     ]
   },
   {
     q: "배우자에게 <em>서운함</em>을 느낄 때는 주로?",
     choices: [
+      { t: '중요한 날을 기억 못 할 때', l: 3 },
+      { t: '스킨십이 줄어들 때', l: 5 },
       { t: '칭찬이나 감사 말이 없을 때', l: 1 },
       { t: '함께 있어도 딴생각을 할 때', l: 2 },
-      { t: '중요한 날을 기억 못 할 때', l: 3 },
-      { t: '힘들어도 도움을 안 줄 때', l: 4 },
-      { t: '스킨십이 줄어들 때', l: 5 }
+      { t: '힘들어도 도움을 안 줄 때', l: 4 }
     ]
   },
   {
     q: "사랑을 표현하고 싶을 때 <em>나는 자연스럽게</em>…",
     choices: [
-      { t: '칭찬이나 격려의 말을 한다', l: 1 },
-      { t: '드라이브나 산책을 제안한다', l: 2 },
-      { t: '좋아할 것 같은 걸 사다 준다', l: 3 },
       { t: '집안일이나 심부름을 대신한다', l: 4 },
-      { t: '꼭 안아준다', l: 5 }
+      { t: '꼭 안아준다', l: 5 },
+      { t: '드라이브나 산책을 제안한다', l: 2 },
+      { t: '칭찬이나 격려의 말을 한다', l: 1 },
+      { t: '좋아할 것 같은 걸 사다 준다', l: 3 }
     ]
   },
   {
     q: "힘든 날, 배우자가 해줬으면 하는 것 <em>한 가지</em>는?",
     choices: [
-      { t: '"당신이 있어서 다행이야"', l: 1 },
-      { t: '아무 말 없이 옆에 같이 있어주기', l: 2 },
       { t: '좋아하는 음식 사다 주기', l: 3 },
+      { t: '손 꼭 잡아주기', l: 5 },
       { t: '집안일 다 해놓고 쉬게 해주기', l: 4 },
-      { t: '손 꼭 잡아주기', l: 5 }
+      { t: '"당신이 있어서 다행이야"', l: 1 },
+      { t: '아무 말 없이 옆에 같이 있어주기', l: 2 }
     ]
   },
   {
     q: "결혼기념일에 <em>가장 감동받을</em> 것은?",
     choices: [
-      { t: '진심 담긴 손편지', l: 1 },
       { t: '딴 거 없이 둘만의 오롯한 하루', l: 2 },
-      { t: '오래 갖고 싶었던 선물', l: 3 },
       { t: '내가 못 하던 일 해결해 주기', l: 4 },
-      { t: '더 많은 스킨십과 온기', l: 5 }
+      { t: '더 많은 스킨십과 온기', l: 5 },
+      { t: '오래 갖고 싶었던 선물', l: 3 },
+      { t: '진심 담긴 손편지', l: 1 }
     ]
   },
   {
     q: '"사랑한다"는 말보다 <em>더 크게 느껴지는</em> 것은?',
     choices: [
-      { t: '구체적인 칭찬("네가 대단한 이유는…")', l: 1 },
-      { t: '눈 맞추며 30분 대화', l: 2 },
-      { t: '이유 없이 사온 꽃 한 다발', l: 3 },
       { t: '묻지도 않고 설거지 해놓기', l: 4 },
-      { t: '뒤에서 안아주기', l: 5 }
+      { t: '이유 없이 사온 꽃 한 다발', l: 3 },
+      { t: '뒤에서 안아주기', l: 5 },
+      { t: '눈 맞추며 30분 대화', l: 2 },
+      { t: '구체적인 칭찬("네가 대단한 이유는…")', l: 1 }
     ]
   },
   {
     q: "배우자가 나를 무시한다고 <em>느껴지는 순간</em>은?",
     choices: [
-      { t: '비판적인 말을 들을 때', l: 1 },
       { t: '내 말을 건성으로 들을 때', l: 2 },
-      { t: '내 좋아하는 걸 기억 못 할 때', l: 3 },
+      { t: '공공장소에서 거리를 둘 때', l: 5 },
       { t: '내가 바쁜데 도움을 안 줄 때', l: 4 },
-      { t: '공공장소에서 거리를 둘 때', l: 5 }
+      { t: '내 좋아하는 걸 기억 못 할 때', l: 3 },
+      { t: '비판적인 말을 들을 때', l: 1 }
     ]
   },
   {
     q: "부부 관계에서 <em>더 늘리고 싶은</em> 것은?",
     choices: [
-      { t: '서로 칭찬하고 격려하는 말', l: 1 },
-      { t: '폰 없이 함께하는 시간', l: 2 },
-      { t: '작은 선물과 이벤트', l: 3 },
+      { t: '포옹과 스킨십', l: 5 },
       { t: '서로 돕고 섬기는 것', l: 4 },
-      { t: '포옹과 스킨십', l: 5 }
+      { t: '서로 칭찬하고 격려하는 말', l: 1 },
+      { t: '작은 선물과 이벤트', l: 3 },
+      { t: '폰 없이 함께하는 시간', l: 2 }
     ]
   },
   {
     q: "다른 부부를 보며 <em>부러울 때</em>는?",
     choices: [
-      { t: '서로 칭찬하는 말을 자주 할 때', l: 1 },
       { t: '항상 함께 다닐 때', l: 2 },
-      { t: '선물·이벤트를 자주 할 때', l: 3 },
       { t: '집안일을 서로 나눌 때', l: 4 },
-      { t: '자연스럽게 스킨십을 할 때', l: 5 }
+      { t: '자연스럽게 스킨십을 할 때', l: 5 },
+      { t: '서로 칭찬하는 말을 자주 할 때', l: 1 },
+      { t: '선물·이벤트를 자주 할 때', l: 3 }
     ]
   },
   {
     q: "하나님의 사랑을 <em>가장 크게 느끼는</em> 순간은?",
     choices: [
-      { t: '말씀 속에서 위로와 격려를 받을 때', l: 1 },
-      { t: '조용히 주님과 동행하는 순간', l: 2 },
-      { t: '예상치 못한 은혜(선물)를 받을 때', l: 3 },
       { t: '주님이 내 짐을 덜어주실 때', l: 4 },
-      { t: '주님 품 안에 있는 평안을 느낄 때', l: 5 }
+      { t: '말씀 속에서 위로와 격려를 받을 때', l: 1 },
+      { t: '주님 품 안에 있는 평안을 느낄 때', l: 5 },
+      { t: '예상치 못한 은혜(선물)를 받을 때', l: 3 },
+      { t: '조용히 주님과 동행하는 순간', l: 2 }
     ]
   }
 ];
@@ -936,16 +938,38 @@ function showResult() {
 }
 
 function shareKakao(name, en, emoji) {
-  const text = `${emoji} 나의 사랑의 언어는 "${name}"이에요!\n(${en})\n\n당신의 사랑의 언어는 무엇인가요?\n아래 링크에서 테스트해보세요 💌`;
-  if (navigator.share) {
-    navigator.share({
-      title: `나의 사랑의 언어 — ${emoji} ${name}`,
-      text: text,
-      url: window.location.href
-    }).catch(() => {});
+  const shareText = emoji + ' 나의 사랑의 언어는 "' + name + '"이에요!\n(' + en + ')\n\n당신의 사랑의 언어는 무엇인가요?\n아래 링크에서 테스트해보세요 💌\n' + window.location.href;
+
+  const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+  if (isMobile) {
+    // 카카오톡 앱 URL 스킴으로 직접 열기 시도
+    const kakaoScheme = 'kakaolink://send?msg=' + encodeURIComponent(shareText);
+    const startTime = Date.now();
+    const iframe = document.createElement('iframe');
+    iframe.style.display = 'none';
+    document.body.appendChild(iframe);
+
+    const timer = setTimeout(function() {
+      try { document.body.removeChild(iframe); } catch(e) {}
+      // 앱이 열리지 않았으면 클립보드 복사
+      if (Date.now() - startTime < 2000) {
+        copyToClipboard(shareText);
+        showToast('복사 완료! 카카오톡 대화창에 붙여넣기 해보세요 💌');
+      }
+    }, 1200);
+
+    window.addEventListener('blur', function() {
+      clearTimeout(timer);
+      try { document.body.removeChild(iframe); } catch(e) {}
+    }, { once: true });
+
+    iframe.src = kakaoScheme;
+
   } else {
-    copyToClipboard(text + '\n' + window.location.href);
-    showToast('링크를 복사했어요! 카카오톡에 붙여넣기 해보세요 💌');
+    // PC: 클립보드 복사
+    copyToClipboard(shareText);
+    showToast('복사 완료! 카카오톡에 붙여넣기 해보세요 💌');
   }
 }
 
